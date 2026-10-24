@@ -1,0 +1,55 @@
+/* Les couleurs sont définies une seule fois ici, puis réutilisées avec var(--nom) */
+:root {
+  --vert: #0f766e; --vert-fonce: #0b3d36; --vert-clair: #e3f2f1;
+  --orange: #b45309; --orange-clair: #fef3c7;
+  --rouge: #b91c1c; --rouge-clair: #fee2e2;
+  --texte: #111827; --gris: #4b5563; --bord: #e5e7eb; --fond: #f6f8f8;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px; background: var(--fond); color: var(--texte);
+       font-family: "Segoe UI", system-ui, Arial, sans-serif; line-height: 1.4; }
+.page { max-width: 880px; margin: 0 auto; }
+.page h1 { font-size: 20px; margin: 0 0 20px; }
+.colonnes { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+
+.carte { flex: 1 1 360px; max-width: 440px; background: #fff; border: 1px solid var(--bord);
+         border-radius: 16px; padding: 20px; }
+.carte-entete { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+                padding-bottom: 14px; border-bottom: 1px solid var(--bord); }
+.carte-entete h2 { font-size: 16px; margin: 0; }
+.carte-entete a { color: var(--vert); font-size: 13px; font-weight: 600; text-decoration: none; }
+.contenu { padding-top: 16px; min-height: 170px; }
+
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px;
+         font-weight: 700; background: var(--vert-clair); color: var(--vert); }
+.badge.bientot { background: var(--orange-clair); color: var(--orange); }
+.badge.encours { background: var(--rouge-clair); color: var(--rouge); }
+
+.titre-reunion { font-size: 17px; font-weight: 700; margin: 10px 0 2px; }
+.heure-reunion { color: var(--gris); font-size: 14px; margin: 0 0 12px; }
+.compte { font-size: 34px; font-weight: 800; letter-spacing: -0.5px; color: var(--vert); margin: 0 0 14px;
+          font-variant-numeric: tabular-nums; } /* chiffres de largeur fixe : le texte ne "saute" pas */
+.compte.bientot { color: var(--orange); }
+.compte.encours { color: var(--rouge); }
+
+.bouton { border: 0; border-radius: 10px; padding: 10px 18px; font-size: 14px; font-weight: 700;
+          color: #fff; background: var(--vert); cursor: pointer; }
+.bouton:hover:not(:disabled) { background: var(--vert-fonce); }
+.bouton:focus-visible { outline: 3px solid #5eead4; outline-offset: 2px; }
+.bouton:disabled { background: #d1d5db; color: #4b5563; cursor: not-allowed; }
+.aide-bouton { font-size: 12px; color: var(--gris); margin: 6px 0 0; }
+.vide { color: var(--gris); text-align: center; padding: 24px 8px; }
+
+.suite { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--bord); }
+.suite h3 { font-size: 13px; margin: 0 0 8px; color: var(--gris); font-weight: 600; }
+.suite ul { list-style: none; margin: 0; padding: 0; }
+.suite li { display: flex; justify-content: space-between; gap: 8px; font-size: 14px; padding: 4px 0; }
+.suite li span:last-child { color: var(--gris); }
+
+.test { flex: 1 1 240px; max-width: 340px; background: #fff; border: 1px dashed #9ca3af;
+        border-radius: 16px; padding: 20px; }
+.test h2 { font-size: 15px; margin: 0 0 12px; }
+.test button { display: block; width: 100%; margin-bottom: 8px; padding: 9px 12px; border: 1px solid var(--bord);
+               border-radius: 10px; background: #fff; font-size: 13px; cursor: pointer; text-align: left; }
+.test button:hover { background: var(--vert-clair); }
+.test button:focus-visible { outline: 3px solid #5eead4; outline-offset: 2px; }

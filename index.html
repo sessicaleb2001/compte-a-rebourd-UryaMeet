@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compte à rebours UryMeet</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
+  <h1>Compte à rebours de la prochaine réunion</h1>
+
+  <div class="colonnes">
+    <!-- La carte : les zones vides sont remplies par js/affichage.js grâce à leur id -->
+    <section class="carte" aria-labelledby="titre-carte">
+      <div class="carte-entete">
+        <h2 id="titre-carte">Prochaines Réunions</h2>
+        <a href="#">Agenda complet →</a>
+      </div>
+      <div class="contenu">
+        <div id="zone-vide" class="vide" hidden>Aucune réunion prévue pour le moment.</div>
+        <div id="zone-reunion" hidden>
+          <span id="badge" class="badge">À venir</span>
+          <p id="titre" class="titre-reunion"></p>
+          <p id="heure" class="heure-reunion"></p>
+          <p id="compte" class="compte" role="timer"></p>
+          <button id="bouton" class="bouton" type="button">Rejoindre</button>
+          <p id="aide" class="aide-bouton"></p>
+        </div>
+        <div id="zone-suite" class="suite" hidden>
+          <h3>Ensuite</h3>
+          <ul id="liste-suite"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panneau de test : à supprimer quand la carte est intégrée -->
+    <aside class="test">
+      <h2>Panneau de test</h2>
+      <button type="button" id="t-1">Réunion dans 1 minute</button>
+      <button type="button" id="t-10">Réunion dans 10 minutes</button>
+      <button type="button" id="t-120">Réunion dans 2 heures</button>
+      <button type="button" id="t-0">Réunion qui commence maintenant</button>
+      <button type="button" id="t-reset">Tout effacer</button>
+    </aside>
+  </div>
+</div>
+
+<!-- L'ordre compte : chaque fichier utilise ce que le précédent définit -->
+<script src="js/donnees.js"></script>
+<script src="js/calcul.js"></script>
+<script src="js/affichage.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
